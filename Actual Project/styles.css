@@ -28,8 +28,7 @@ header button {
 
 #menu button {
     padding: 10px;
-    background-color: #fff;
-    button-size: 20px;
+    background: #51515e;
     text-align: center;
     margin-left: 50px;
     margin-right: 50px;
