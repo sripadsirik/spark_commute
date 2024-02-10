@@ -1,17 +1,18 @@
+/* Add your CSS styles here */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #121212;
     
-    background: -webkit-linear-gradient(25deg, #88E0EF, #5384B1, #3A5E8C, #213B62, #261A40, #52336D, #7C4293, #CA7AEB);
+    background: -webkit-linear-gradient(45deg, #CA7AEB, #7C4293, #52336D, #261A40, #213B62, #3A5E8C, #5384B1, #88E0EF);
 }
 
 header {
-    background: -webkit-linear-gradient(25deg, #88E0EF, #5384B1, #3A5E8C, #213B62, #261A40, #52336D, #7C4293, #CA7AEB);
     color: #fff;
     padding: 5px;
     text-align: center;
+    background-image: url("Backgroundcss.jpeg");
 }
 
 header h1 {
@@ -21,15 +22,21 @@ header h1 {
 }
 
 header button {
-    /* background-color: #3B3737;
-    border: 2px solid black; */
-    
     color: #fff;
-    font-size: 16px;
+    font-size: 13px;
     cursor: pointer;
     margin: 0 10px;
     margin-left: 20px;
     margin-top: 2px;
+    border: none;
+    background: transparent;
+    position: relative;
+    transition: all 0.5s ease;
+    outline: none;
+}
+
+header button:hover {
+    border-bottom: 2px solid #f44336;
 }
 
 .hr-lines {
@@ -62,7 +69,6 @@ header button {
 }
 
 /* Updated CSS for the signup section */
-/* Updated CSS for the signup section */
 .signup {
     padding: 20px;
     margin-top: 50px;
@@ -87,87 +93,4 @@ header button {
 .menu {
     padding: 50px;
     color: #121212;
-}
-
-
-.userInput {
-    margin-bottom: 10px;
-    /* Reduce the margin between userInput elements */
-}
-
-.userInput:last-child {
-    margin-bottom: 0;
-    /* Remove margin from the last userInput element */
-}
-
-
-.userInput label {
-    margin-bottom: 5px;
-}
-
-.userInput input {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.searchbar {
-    margin-top: 30px;
-    float: center;
-}
-
-.searchbar input[type="text"] {
-    width: 300px;
-    /* Adjust width as needed */
-    height: 40px;
-    /* Adjust height as needed */
-    padding: 10px;
-    /* Add padding for better visual appearance */
-    border-radius: 5px;
-    /* Add border radius for rounded corners */
-    border: 1px solid #ccc;
-    /* Add border for better visibility */
-    text-align: center;
-}
-
-.signupTitle {
-    text-align: center;
-}
-
-.submit {
-    /* Remove absolute positioning */
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px; /* Add margin to separate from other inputs */
-    width: 100%; /* Make the button full width */
-}
-
-
-.submit-button:hover {
-    background-color: #45a049;
-    /* Darker green color on hover */
-}
-
-section {
-    padding: 50px;
-    background-color: #fff;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-footer {
-    background: -webkit-linear-gradient(25deg, #88E0EF, #5384B1, #3A5E8C, #213B62, #261A40, #52336D, #7C4293, #CA7AEB);
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    /* margin-top: 50px; Adjust as needed */
 }
