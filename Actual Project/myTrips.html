@@ -4,19 +4,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyTrips</title>
+    <title>SPACERIDE - Your Space Travel Companion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d99ff;
+        }
+
+        header {
+            background-color: #905cd3;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header button {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            background-color: #78b4de;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #905cd3;
+        }
+
+        section {
+            padding: 50px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        footer {
+            background-color: #905cd3;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
 
     <header>
         <h1>SPACERIDE</h1>
-        <button onclick>
-            <h2>DASHBOARD</h2>
-        </button>
-        <button>
-            <h2>FIND MY RIDE</h2>
-        </button>
+        <button>DASHBOARD</button>
+        <button>FIND MY RIDE</button>
         <button onclick="location.href='login.html'">Log In</button>
         <button onclick="location.href='signup.html'">Sign Up</button>
     </header>
@@ -45,7 +111,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 My Basic HTML Page</p>
+        <p>&copy; 2024 SPACERIDE - All rights reserved</p>
     </footer>
 
 </body>
