@@ -28,8 +28,7 @@ header button {
 
 #menu button {
     padding: 10px;
-    background-color: #fff;
-    button-size: 20px;
+    background: #51515e;
     text-align: center;
     margin-left: 50px;
     margin-right: 50px;
@@ -77,7 +76,7 @@ section {
 }
 
 footer {
-    background-color: #905cd3;
+    background: -webkit-linear-gradient(25deg, #88E0EF, #5384B1, #3A5E8C, #213B62, #261A40, #52336D, #7C4293, #CA7AEB);
     color: #fff;
     text-align: center;
     padding: 10px;
