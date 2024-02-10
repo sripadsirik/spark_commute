@@ -2,31 +2,61 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: -webkit-linear-gradient(25deg, #88E0EF, #5384B1, #3A5E8C, #213B62, #261A40, #52336D, #7C4293, #CA7AEB);
+    background-color: #121212;
 }
 
 header {
     background: -webkit-linear-gradient(25deg, #88E0EF, #5384B1, #3A5E8C, #213B62, #261A40, #52336D, #7C4293, #CA7AEB);
     color: #fff;
-    padding: 20px;
+    padding: 5px;
     text-align: center;
 }
 
 header h1 {
     margin: 0;
-    font-size: 48px;
+    font-size: 56px;
+    margin-top: 20px;
 }
 
 header button {
-    background-color: transparent;
-    border: none;
+    background-color: #3B3737;
+    border: 2px solid black;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
     margin: 0 10px;
     margin-left: 20px;
-    
+    margin-top: 2px;
 }
+
+.hr-lines{
+    position: relative;
+    max-width: 800px;
+    margin: 100px auto;
+    text-align: center;
+  }
+  
+  .hr-lines:before{
+    content:" ";
+    height: 2px;
+    width: 200px;
+    background: black;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+  
+  .hr-lines:after{
+    content:" ";
+    height: 2px;
+    width: 200px;
+    background: black;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+  }
 
 /* Updated CSS for the signup section */
 /* Updated CSS for the signup section */
@@ -43,6 +73,8 @@ header button {
     margin-left: 20px; /* Move the signup section to the right */
     margin-right: auto;
     margin-bottom: 150px;
+    position: relative;
+    padding-bottom: 5%;
 }
 
 .menu {
@@ -72,11 +104,38 @@ header button {
 }
 
 .searchbar {
-    float: right;
+    margin-top: 30px;
+    float: center;
+}
+
+.searchbar input[type="text"] {
+    width: 300px; /* Adjust width as needed */
+    height: 40px; /* Adjust height as needed */
+    padding: 10px; /* Add padding for better visual appearance */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    border: 1px solid #ccc; /* Add border for better visibility */
+    text-align: center;
 }
 
 .signupTitle{
     text-align: center;
+}
+
+.submit-button {
+    position: absolute; /* Set the position of the button to absolute */
+    bottom: 20px; /* Adjusted distance from the bottom */
+    right: 10px; /* Distance from the right */
+    background-color: #4CAF50; /* Green background color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.submit-button:hover {
+    background-color: #45a049; /* Darker green color on hover */
 }
 
 section {
