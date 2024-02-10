@@ -29,15 +29,15 @@ header button {
     margin-top: 2px;
 }
 
-.hr-lines{
+.hr-lines {
     position: relative;
     max-width: 800px;
     margin: 100px auto;
     text-align: center;
-  }
-  
-  .hr-lines:before{
-    content:" ";
+}
+
+.hr-lines:before {
+    content: " ";
     height: 2px;
     width: 200px;
     background: black;
@@ -45,10 +45,10 @@ header button {
     position: absolute;
     top: 50%;
     left: 0;
-  }
-  
-  .hr-lines:after{
-    content:" ";
+}
+
+.hr-lines:after {
+    content: " ";
     height: 2px;
     width: 200px;
     background: black;
@@ -56,21 +56,27 @@ header button {
     position: absolute;
     top: 50%;
     right: 0;
-  }
+}
 
 /* Updated CSS for the signup section */
 /* Updated CSS for the signup section */
-#signup {
+.signup {
     padding: 20px;
-    margin-top: 50px; /* Add some top margin */
-    background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background */
-    border-radius: 10px; /* Add rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-    
+    margin-top: 50px;
+    /* Add some top margin */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Add a semi-transparent background */
+    border-radius: 10px;
+    /* Add rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Add a subtle shadow */
+
     /* Set width to 50% */
     width: 50%;
-    max-width: 500px; /* Adjust max-width as needed */
-    margin-left: 20px; /* Move the signup section to the right */
+    max-width: 500px;
+    /* Adjust max-width as needed */
+    margin-left: 20px;
+    /* Move the signup section to the right */
     margin-right: auto;
     margin-bottom: 150px;
     position: relative;
@@ -83,11 +89,13 @@ header button {
 
 
 .userInput {
-    margin-bottom: 10px; /* Reduce the margin between userInput elements */
+    margin-bottom: 10px;
+    /* Reduce the margin between userInput elements */
 }
 
 .userInput:last-child {
-    margin-bottom: 0; /* Remove margin from the last userInput element */
+    margin-bottom: 0;
+    /* Remove margin from the last userInput element */
 }
 
 
@@ -109,23 +117,32 @@ header button {
 }
 
 .searchbar input[type="text"] {
-    width: 300px; /* Adjust width as needed */
-    height: 40px; /* Adjust height as needed */
-    padding: 10px; /* Add padding for better visual appearance */
-    border-radius: 5px; /* Add border radius for rounded corners */
-    border: 1px solid #ccc; /* Add border for better visibility */
+    width: 300px;
+    /* Adjust width as needed */
+    height: 40px;
+    /* Adjust height as needed */
+    padding: 10px;
+    /* Add padding for better visual appearance */
+    border-radius: 5px;
+    /* Add border radius for rounded corners */
+    border: 1px solid #ccc;
+    /* Add border for better visibility */
     text-align: center;
 }
 
-.signupTitle{
+.signupTitle {
     text-align: center;
 }
 
-.submit-button {
-    position: absolute; /* Set the position of the button to absolute */
-    bottom: 20px; /* Adjusted distance from the bottom */
-    right: 10px; /* Distance from the right */
-    background-color: #4CAF50; /* Green background color */
+.submit {
+    position: absolute;
+    /* Set the position of the button to absolute */
+    bottom: 20px;
+    /* Adjusted distance from the bottom */
+    right: 10px;
+    /* Distance from the right */
+    background-color: #4CAF50;
+    /* Green background color */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -135,7 +152,8 @@ header button {
 
 
 .submit-button:hover {
-    background-color: #45a049; /* Darker green color on hover */
+    background-color: #45a049;
+    /* Darker green color on hover */
 }
 
 section {
