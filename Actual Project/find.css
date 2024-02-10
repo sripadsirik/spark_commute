@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #121212;
-    
+
     background: -webkit-linear-gradient(45deg, #CA7AEB, #7C4293, #52336D, #261A40, #213B62, #3A5E8C, #5384B1, #88E0EF);
 }
 
@@ -54,7 +54,7 @@ header button:hover {
     display: block;
     position: absolute;
     top: 50%;
-    left: 0;
+    left: 10;
 }
 
 .hr-lines:after {
@@ -77,16 +77,19 @@ header button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 50%;
     max-width: 500px;
-    margin: 50px auto; /* Center the signup section horizontally */
+    margin: 50px auto;
+    /* Center the signup section horizontally */
     position: relative;
     padding-bottom: 5%;
+
 }
 
 .userInput input {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: calc(100% - 22px); /* Adjusted input width to accommodate padding and border */
+    width: calc(100% - 22px);
+    /* Adjusted input width to accommodate padding and border */
     box-sizing: border-box;
 }
 
