@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Call it something</title>
+	
+	<link rel="stylesheet" href="./dashboard.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+	
+	
+
+</head>
+
+<body>
+		<section class="header">
+			<nav id="navbar">
+				<div class="nav-links" id="navLinks">
+   					<i class="fa fa-window-close" onclick="hideMenu()">Close</i>
+						<ul id = "menu">
+						<li><a href="welcome.php">HOME</a></li>
+				  		<li><a href="">ABOUT</a></li>
+						<li><a href="">OUR MISSION</a></li>
+				  		<li><a href="">BLOG</a></li>
+				  		<li><a href="">MERCH</a></li>
+				 		<li><a href="">CONTACT</a></li>
+					</ul>
+				</div>
+					<div class="donate" id="donate">
+						<a href="" class="donate-btn">DONATE</a>
+					</div>
+				<i class="fa fa-bars" onclick="showMenu()">Menu</i>
+			</nav>
+		</section>
+	<div class="text-box">
+		<h1>S.A.F.A. Alliance</h1>	
+		<p>No student left behind</p>
+		<p><a href="" class="hero-btn">Support Us</a></p>
+</div>
+
+	
+	
+
+<!-------JavaScript------->
+<script>
+
+	var navLinks = document.getElementById("navLinks");
+	
+	function showMenu(){
+		navLinks.style.right = "0";
+	}
+	function hideMenu(){
+		navLinks.style.right = "-200px";
+	}
+
+</script>
+
+<script>
+	
+	
+	var navbar = document.getElementById("navbar");
+	var menu = document.getElementById("menu");
+	
+	window.onscroll = function(){
+		if(window.pageYOffset >= menu.offsetTop){
+			navbar.classList.add("sticky");
+		}
+		else{
+			navbar.classList.remove("sticky");
+		}
+	}
+
+	
+</script>
+
+	
+
+</body>
+</html>
