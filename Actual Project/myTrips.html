@@ -56,10 +56,7 @@
         <p>This is the content of Section 3.</p>
     </section>
 
-    <footer>
-        <p>&copy; 2024 My Basic HTML Page</p>
-    </footer>
-
+    <!-- Ensure you have this element in your HTML -->
     <div id="myTripsUserDataContainer"></div>
 
     <script>
@@ -70,8 +67,159 @@
         function goFind() {
             window.location.href = 'findmyride.html';
         };
+
+        window.onload = function() {
+            const userData = localStorage.getItem('userData');
+            if (userData) {
+                const data = JSON.parse(userData);
+                const userDataDiv = createUserDiv(data);
+                document.getElementById('myTripsUserDataContainer').appendChild(userDataDiv);
+            } else {
+                const noDataMessage = document.createElement('p');
+                noDataMessage.textContent = "No user data found.";
+                document.getElementById('myTripsUserDataContainer').appendChild(noDataMessage);
+            }
+        };
+
+        function createUserDiv(data) {
+            const userDataDiv = document.createElement('div');
+            userDataDiv.classList.add('userData');
+            userDataDiv.innerHTML = `
+                <p><strong>Full Name:</strong> ${data.fullname}</p>
+                <p><strong>NetID:</strong> ${data.netid}</p>
+                <p><strong>Phone Number:</strong> ${data.phonenumber}</p>
+                <p><strong>Departure Location:</strong> ${data.departurelocation}</p>
+                <p><strong>Date:</strong> ${data.date}</p>
+                <p><strong>Car Description:</strong> ${data.cardescription}</p>
+                <p><strong>Date and Time:</strong> ${data.submissionTime}</p>
+            `;
+            return userDataDiv;
+        }
     </script>
 
 </body>
 
 </html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Trips</title>
+    <link rel="stylesheet" href="trip.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <style>
+        /* Add your CSS styles here */
+        .userData {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            color: white; /* Set font color to white */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>SPACERIDE</h1>
+        <button onclick="goDash()">
+            <h2>DASHBOARD</h2>
+        </button>
+        <button onclick="goFind()">
+            <h2>FIND MY RIDE</h2>
+        </button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#section1">Section 1</a></li>
+            <li><a href="#section2">Section 2</a></li>
+            <li><a href="#section3">Section 3</a></li>
+        </ul>
+    </nav>
+
+    <section id="section1">
+        <h2>Section 1</h2>
+        <p>This is the content of Section 1.</p>
+    </section>
+
+    <section id="section2">
+        <h2>Section 2</h2>
+        <p>This is the content of Section 2.</p>
+    </section>
+
+    <section id="section3">
+        <h2>Section 3</h2>
+        <p>This is the content of Section 3.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Basic HTML Page</p>
+    </footer>
+
+    <!-- Ensure you have this element in your HTML 
+    <div id="myTripsUserDataContainer"></div>
+
+    <script>
+        function goDash() {
+            window.location.href = 'dashboard.html';
+        };
+
+        function goFind() {
+            window.location.href = 'findmyride.html';
+        };
+
+        window.onload = function() {
+            displaySavedUserData();
+        };
+
+        function displaySavedUserData() {
+            const userData = localStorage.getItem('userTrips');
+            if (userData) {
+                const trips = JSON.parse(userData);
+                trips.forEach(trip => {
+                    const userDataDiv = createUserDiv(trip);
+                    document.getElementById('myTripsUserDataContainer').appendChild(userDataDiv);
+                });
+            } else {
+                // Handle case when no user data is found in localStorage
+            }
+        }
+
+        function createUserDiv(data) {
+            const userDataDiv = document.createElement('div');
+            userDataDiv.classList.add('userData');
+            userDataDiv.innerHTML = `
+                <p><strong>Full Name:</strong> ${data.fullname}</p>
+                <p><strong>NetID:</strong> ${data.netid}</p>
+                <p><strong>Phone Number:</strong> ${data.phonenumber}</p>
+                <p><strong>Departure Location:</strong> ${data.departurelocation}</p>
+                <p><strong>Date:</strong> ${data.date}</p>
+                <p><strong>Car Description:</strong> ${data.cardescription}</p>
+                <button onclick="deleteTrip(this)" class="deleteButton">Delete</button>
+            `;
+            return userDataDiv;
+        }
+
+        function deleteTrip(button) {
+            const userDataDiv = button.parentNode;
+            userDataDiv.remove();
+            // Remove the corresponding data from localStorage
+            const trips = JSON.parse(localStorage.getItem('userTrips'));
+            const updatedTrips = trips.filter(trip => {
+                return trip.fullname !== userDataDiv.querySelector('p:nth-child(1)').innerText.split(':')[1].trim(); // Assuming full name is the unique identifier
+            });
+            localStorage.setItem('userTrips', JSON.stringify(updatedTrips));
+        }
+    </script>
+
+</body>
+
+</html> -->

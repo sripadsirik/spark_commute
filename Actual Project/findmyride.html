@@ -77,62 +77,62 @@
 
     <script>
         function submitForm() {
-            const data = {
-                fullname: document.getElementById('fullname').value,
-                netid: document.getElementById('netid').value,
-                phonenumber: document.getElementById('phonenumber').value,
-                departurelocation: document.getElementById('departurelocation').value,
-                date: document.getElementById('date').value,
-                cardescription: document.getElementById('cardescription').value
-            };
+        const data = {
+            fullname: document.getElementById('fullname').value,
+            netid: document.getElementById('netid').value,
+            phonenumber: document.getElementById('phonenumber').value,
+            departurelocation: document.getElementById('departurelocation').value,
+            date: document.getElementById('date').value,
+            cardescription: document.getElementById('cardescription').value,
+            submissionTime: new Date().toLocaleString()  // Capture submission time
+        };
 
-            
+        // Create a div element to contain the user data
+        const userDataDiv = document.createElement('div');
+        userDataDiv.classList.add('userData');
 
-            // Create a div element to contain the user data
-            const userDataDiv = document.createElement('div');
-            userDataDiv.classList.add('userData');
+        // Construct HTML to display user data
+        userDataDiv.innerHTML = `
+            <p><strong>Full Name:</strong> ${data.fullname}</p>
+            <p><strong>NetID:</strong> ${data.netid}</p>
+            <p><strong>Phone Number:</strong> ${data.phonenumber}</p>
+            <p><strong>Departure Location:</strong> ${data.departurelocation}</p>
+            <p><strong>Date:</strong> ${data.date}</p>
+            <p><strong>Car Description:</strong> ${data.cardescription}</p>
+            <p><strong>Date and Time:</strong> ${data.submissionTime}</p>
+            <button class="requestCarpool">Request Carpool</button>
+        `;
 
-            // Construct HTML to display user data
-            userDataDiv.innerHTML = `
-                <p><strong>Full Name:</strong> ${data.fullname}</p>
-                <p><strong>NetID:</strong> ${data.netid}</p>
-                <p><strong>Phone Number:</strong> ${data.phonenumber}</p>
-                <p><strong>Departure Location:</strong> ${data.departurelocation}</p>
-                <p><strong>Date:</strong> ${data.date}</p>
-                <p><strong>Car Description:</strong> ${data.cardescription}</p>
-                <p><strong>Date and Time:</strong> ${data.submissionTime}</p>
-                <button class="requestCarpool">Request Carpool</button>
-            `;
+        // Add event listener to the Request Carpool button
+        const requestCarpoolButton = userDataDiv.querySelector('.requestCarpool');
+        requestCarpoolButton.addEventListener('click', function() {
+            // Deep clone the userDataDiv
+            const clonedUserDataDiv = userDataDiv.cloneNode(true);
 
-            // Add event listener to the Request Carpool button
-            const requestCarpoolButton = userDataDiv.querySelector('.requestCarpool');
-            requestCarpoolButton.addEventListener('click', function() {
-                // Deep clone the userDataDiv
-                const clonedUserDataDiv = userDataDiv.cloneNode(true);
+            // Remove the userDataDiv from the current page
+            userDataDiv.remove();
 
-                // Remove the userDataDiv from the current page
-                userDataDiv.remove();
+            // Append the clonedUserDataDiv to the MyTrips page
+            const myTripsUserDataContainer = document.getElementById('myTripsUserDataContainer');
+            myTripsUserDataContainer.appendChild(clonedUserDataDiv);
 
-                // Append the clonedUserDataDiv to the MyTrips page
-                const myTripsUserDataContainer = document.getElementById('myTripsUserDataContainer');
-                myTripsUserDataContainer.appendChild(clonedUserDataDiv);
+            localStorage.setItem('userData', JSON.stringify(data));
+            window.location.href = 'myTrips.html';
+        });
 
-                const queryParams = new URLSearchParams(data).toString();
-                window.location.href = 'myTrips.html?' + queryParams;
-            });
+        // Append the userDataDiv to the userDataContainer
+        const userDataContainer = document.getElementById('userDataContainer');
+        userDataContainer.appendChild(userDataDiv);
 
-            // Append the userDataDiv to the userDataContainer
-            const userDataContainer = document.getElementById('userDataContainer');
-            userDataContainer.appendChild(userDataDiv);
+        // Clear input fields after submission
+        document.getElementById('fullname').value = '';
+        document.getElementById('netid').value = '';
+        document.getElementById('phonenumber').value = '';
+        document.getElementById('departurelocation').value = '';
+        document.getElementById('date').value = '';
+        document.getElementById('cardescription').value = '';
+    }
 
-            // Clear input fields after submission
-            document.getElementById('fullname').value = '';
-            document.getElementById('netid').value = '';
-            document.getElementById('phonenumber').value = '';
-            document.getElementById('departurelocation').value = '';
-            document.getElementById('date').value = '';
-            document.getElementById('cardescription').value = '';
-        }
 
         function goDash() {
             window.location.href = 'dashboard.html';
