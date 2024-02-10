@@ -11,9 +11,9 @@
 .header{
 	min-height: 100vh;
 	width: 100%;
-	background-image: linear-gradient(rgba(4,9,30,.7), rgba(4,9,30,.7)), url("C:\Users\memea\Desktop\GitHub projects\spark_commute\Images\5457468.jpg");
+	/* background-image: linear-gradient(rgba(4,9,30,.7), rgba(4,9,30,.7)), url("C:\Users\memea\Desktop\Hackathonlogin\Images\colorful-abstract-nebula-space-background.jpg"); */
 	background-position: center;
-    /* background: -webkit-linear-gradient(25deg, #88E0EF, #5384B1, #3A5E8C, #213B62, #261A40, #52336D, #7C4293, #CA7AEB); */
+    background: -webkit-linear-gradient(25deg, #88E0EF, #5384B1, #3A5E8C, #213B62, #261A40, #52336D, #7C4293, #CA7AEB);
 
     background-size: cover;
 	position: relative;
