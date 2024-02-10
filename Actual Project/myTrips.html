@@ -4,19 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Trips</title>
-    <link rel="stylesheet" href="trip.css">
+    <title>Find My Trip</title>
+    <link rel="stylesheet" href="find.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
     <style>
         /* Add your CSS styles here */
         .userData {
             border: 1px solid #ccc;
             padding: 10px;
             margin-bottom: 10px;
-            color: white; /* Set font color to white */
+            color: white;
+            /* Set font color to white */
+        }
+
+        .userData.hidden {
+            display: none;
         }
     </style>
 </head>
@@ -24,41 +31,20 @@
 <body>
 
     <header>
-        <h1>SpaceRIDE</h1>
-        <button onclick="goDash()">
-            <h2>DASHBOARD</h2>
-        </button>
-        <button onclick="goFind()">
-            <h2>FIND MY RIDE</h2>
-        </button>
+        <h1 class="hr-lines">SpaceRIDE</h1>
+        <div class="menu">
+            <button onclick="goDash()">
+                <h2>DASHBOARD</h2>
+            </button>
+            <button onclick="goFind()">
+                <h2>FIND MY RIDE</h2>
+            </button>
+
+            <button onclick="goTrip()">
+                <h2>MY TRIPS</h2>
+            </button>
+        </div>
     </header>
-
-    <nav>
-        <ul>
-            <li><a href="#section1">Section 1</a></li>
-            <li><a href="#section2">Section 2</a></li>
-            <li><a href="#section3">Section 3</a></li>
-        </ul>
-    </nav>
-
-    <section id="section1">
-        <h2>Section 1</h2>
-        <p>This is the content of Section 1.</p>
-    </section>
-
-    <section id="section2">
-        <h2>Section 2</h2>
-        <p>This is the content of Section 2.</p>
-    </section>
-
-    <section id="section3">
-        <h2>Section 3</h2>
-        <p>This is the content of Section 3.</p>
-    </section>
-
-    <!-- <footer>
-        <p>&copy; 2024 My Basic HTML Page</p>
-    </footer> -->
 
     <!-- Ensure you have this element in your HTML -->
     <div id="myTripsUserDataContainer"></div>
@@ -69,7 +55,10 @@
         };
 
         function goFind() {
-            window.location.href = 'findmyride.html';
+            // Open findmyride.html in a new window
+            const findMyRideWindow = window.open('findmyride.html', '_blank');
+            // Pass the ID of myTripsUserDataContainer to the new window
+            findMyRideWindow.myTripsUserDataContainerId = 'myTripsUserDataContainer';
         };
 
         window.onload = function() {
@@ -98,7 +87,7 @@
                 <p><strong>Phone Number:</strong> ${data.phonenumber}</p>
                 <p><strong>Departure Location:</strong> ${data.departurelocation}</p>
                 <p><strong>Date:</strong> ${data.date}</p>
-                <p><strong>Car Description:</strong> ${data.cardescription}</p>
+                <p><strong>Arrival Location:</strong> ${data.arrivallocation}</p>
                 <button onclick="deleteTrip(this)" class="deleteButton">Delete</button>
             `;
             return userDataDiv;
@@ -110,7 +99,8 @@
             // Remove the corresponding data from localStorage
             const trips = JSON.parse(localStorage.getItem('userTrips'));
             const updatedTrips = trips.filter(trip => {
-                return trip.fullname !== userDataDiv.querySelector('p:nth-child(1)').innerText.split(':')[1].trim(); // Assuming full name is the unique identifier
+                // Assuming full name is the unique identifier
+                return trip.fullname !== userDataDiv.querySelector('p:nth-child(1)').innerText.split(':')[1].trim();
             });
             localStorage.setItem('userTrips', JSON.stringify(updatedTrips));
         }
