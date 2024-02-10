@@ -94,3 +94,62 @@ header button:hover {
     padding: 50px;
     color: #121212;
 }
+
+/* Styles for the search bar */
+.searchbar {
+    margin-top: 30px;
+    text-align: center; /* Center the search bar */
+    position: relative; /* Required for absolute positioning of the placeholder */
+}
+
+.searchbar input[type="text"] {
+    width: 300px; /* Adjust width as needed */
+    height: 40px; /* Adjust height as needed */
+    padding: 10px; /* Add padding for better visual appearance */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    border: 1px solid #ccc; /* Add border for better visibility */
+    text-align: center; /* Center text within the input field */
+    outline: none; /* Remove outline */
+}
+
+.searchbar::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 20px);
+    height: 2px;
+    background-color: transparent; /* Set the line color to transparent */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease; /* Smooth transition for better user experience */
+}
+
+.searchbar input[type="text"]:focus +::after {
+    background-color: #f44336; /* Change line color on focus */
+}
+
+.searchbar input[type="text"]::placeholder {
+    color: #ccc; /* Color of the placeholder text */
+    opacity: 0; /* Initially invisible */
+    transition: opacity 0.3s ease; /* Smooth transition for better user experience */
+}
+
+.searchbar input[type="text"]:focus::placeholder {
+    opacity: 1; /* Make placeholder text visible on focus */
+}
+
+/* Keyframe animation for placeholder */
+@keyframes placeholderFadeIn {
+    from {
+        opacity: 0; /* Start with invisible placeholder */
+        transform: translateY(0); /* Initial position */
+    }
+    to {
+        opacity: 1; /* Fade in placeholder */
+        transform: translateY(-20px); /* Move placeholder upwards */
+    }
+}
+
+.searchbar input[type="text"]:focus::placeholder {
+    animation: placeholderFadeIn 0.3s ease forwards; /* Apply animation on focus */
+}
