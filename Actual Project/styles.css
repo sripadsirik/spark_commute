@@ -14,7 +14,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 36px;
+    font-size: 48px;
 }
 
 header button {
@@ -24,8 +24,10 @@ header button {
     font-size: 16px;
     cursor: pointer;
     margin: 0 10px;
+    margin-left: 20px;
 }
 
+/* Updated CSS for the signup section */
 /* Updated CSS for the signup section */
 #signup {
     padding: 20px;
@@ -37,9 +39,15 @@ header button {
     /* Set width to 50% */
     width: 50%;
     max-width: 500px; /* Adjust max-width as needed */
-    margin-left: 0; /* Push signup to the left side of the page */
+    margin-left: 20px; /* Move the signup section to the right */
     margin-right: auto;
+    margin-bottom: 150px;
 }
+
+.menu {
+    padding: 50px;
+}
+
 
 .userInput {
     margin-bottom: 10px; /* Reduce the margin between userInput elements */
@@ -62,6 +70,13 @@ header button {
     box-sizing: border-box;
 }
 
+.searchbar {
+    float: right;
+}
+
+.signupTitle{
+    text-align: center;
+}
 
 section {
     padding: 50px;
@@ -78,4 +93,5 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    /* margin-top: 50px; Adjust as needed */
 }
