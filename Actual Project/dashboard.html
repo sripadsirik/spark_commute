@@ -1,80 +1,83 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Dashboard</title>
-	
+
 	<link rel="stylesheet" href="./dashboard.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
-	
-	
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+
+
 
 </head>
 
 <body>
-		<section class="header">
-			<nav id="navbar">
-				<div class="nav-links" id="navLinks">
-   					<i class="fa fa-window-close" onclick="hideMenu()">Close</i>
-						<ul id = "menu">
-						<li><a href="dashboard.html">DASHBOARD</a></li>
-				  		<li><a href="findmyride.html">FIND MY RIDE</a></li>
-						<li><a href="myTrips.html">MY TRIPS</a></li>
-				  		
-					</ul>
-				</div>
-					<div class="donate" id="donate">
-						<a href="./Login.html" class="donate-btn">LOGOUT</a>
-					</div>
-				<i class="fa fa-bars" onclick="showMenu()">Menu</i>
-			</nav>
-		</section>
+	<section class="header">
+		<nav id="navbar">
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-window-close" onclick="hideMenu()">Close</i>
+				<ul id="menu">
+					<li><a href="dashboard.html">DASHBOARD</a></li>
+					<li><a href="findmyride.html">FIND MY RIDE</a></li>
+
+				</ul>
+			</div>
+			<div class="donate" id="donate">
+				<a href="./Login.html" class="donate-btn">LOGOUT</a>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()">Menu</i>
+		</nav>
+	</section>
 	<div class="text-box">
-		<h1>SPACERIDE</h1>	
+		<h1>SPACERIDE</h1>
 		<p>Help reduce car emissions</p>
 		<p><a href="./findmyride.html" class="hero-btn">Find a ride</a></p>
-</div>
+	</div>
 
-	
-	
 
-<!-------JavaScript------->
-<script>
 
-	var navLinks = document.getElementById("navLinks");
-	
-	function showMenu(){
-		navLinks.style.right = "0";
-	}
-	function hideMenu(){
-		navLinks.style.right = "-200px";
-	}
 
-</script>
+	<!-------JavaScript------->
+	<script>
 
-<script>
-	
-	
-	var navbar = document.getElementById("navbar");
-	var menu = document.getElementById("menu");
-	
-	window.onscroll = function(){
-		if(window.pageYOffset >= menu.offsetTop){
-			navbar.classList.add("sticky");
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
 		}
-		else{
-			navbar.classList.remove("sticky");
+		function hideMenu() {
+			navLinks.style.right = "-200px";
 		}
-	}
 
-	
-</script>
+	</script>
 
-	
+	<script>
+
+
+		var navbar = document.getElementById("navbar");
+		var menu = document.getElementById("menu");
+
+		window.onscroll = function () {
+			if (window.pageYOffset >= menu.offsetTop) {
+				navbar.classList.add("sticky");
+			}
+			else {
+				navbar.classList.remove("sticky");
+			}
+		}
+
+
+	</script>
+
+
 
 </body>
+
 </html>
