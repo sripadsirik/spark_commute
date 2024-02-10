@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background: -webkit-linear-gradient(25deg, #88E0EF, #5384B1, #3A5E8C, #213B62, #261A40, #52336D, #7C4293, #CA7AEB);
+    background: -webkit-linear-gradient(25deg, #CA7AEB, #7C4293, #52336D, #261A40, #213B62, #3A5E8C,#5384B1 ,#88E0EF);
     color: #fff;
     padding: 5px;
     text-align: center;
@@ -16,6 +16,11 @@ header h1 {
     margin: 0;
     font-size: 56px;
     margin-top: 20px;
+}
+
+h3{
+    margin-left: 30px;
+    color: white;
 }
 
 header button {
