@@ -4,11 +4,10 @@ body {
     padding: 0;
     background-color: #121212;
     
-    background: -webkit-linear-gradient(25deg, #88E0EF, #5384B1, #3A5E8C, #213B62, #261A40, #52336D, #7C4293, #CA7AEB);
+    background: -webkit-linear-gradient(45deg, #CA7AEB, #7C4293, #52336D, #261A40, #213B62, #3A5E8C, #5384B1, #88E0EF);
 }
 
 header {
-    background: -webkit-linear-gradient(25deg, #88E0EF, #5384B1, #3A5E8C, #213B62, #261A40, #52336D, #7C4293, #CA7AEB);
     color: #fff;
     padding: 5px;
     text-align: center;
