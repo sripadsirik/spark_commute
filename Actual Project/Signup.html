@@ -36,13 +36,12 @@
 						</form>
 						
 						<div id="button_container">
-							<button>Register</button>
+							<button onclick="goDash()">Register</button>
 						</div>
 
 
                         <div id="button_containerr">
                             <button onclick="login()">Already have an account? Login</button>
-							<a href="../Login/Login.html">Login here</a>
                             
                         </div>
 						
@@ -54,3 +53,14 @@
     </body>
 
 </html>
+
+<script>
+    function goDash(){
+        window.location.href='dashboard.html';
+    };
+
+    function login(){
+        window.location.href='Login.html';
+    };
+
+</script>
