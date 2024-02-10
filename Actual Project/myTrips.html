@@ -4,12 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyTrips</title>
+    <title>My Trips</title>
     <link rel="stylesheet" href="trip.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <style>
+        /* Add your CSS styles here */
+        .userData {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            color: white; /* Set font color to white */
+        }
+    </style>
 </head>
 
 <body>
@@ -51,16 +60,16 @@
         <p>&copy; 2024 My Basic HTML Page</p>
     </footer>
 
+    <div id="myTripsUserDataContainer"></div>
+
     <script>
+        function goDash() {
+            window.location.href = 'dashboard.html';
+        };
 
-
-    function goDash(){
-        window.location.href='dashboard.html';
-    };
-
-    function goFind(){
-        window.location.href='findmyride.html';
-    };
+        function goFind() {
+            window.location.href = 'findmyride.html';
+        };
     </script>
 
 </body>
