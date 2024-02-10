@@ -5,12 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add specific styles for the signup section */
+        #signup {
+            padding: 20px;
+            margin-top: 50px; /* Add some top margin */
+            background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent background */
+            border-radius: 10px; /* Add rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        }
+
+        .userInput {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 
 <body>
 
     <header>
-
         <h1>SPACERIDE</h1>
         <div class="searchbar">
             <input type="text" placeholder="Search Location">
@@ -26,47 +39,32 @@
         <button>
             <h2>MY TRIPS</h2>
         </button>
-
-
     </header>
 
-
     <section id="signup">
-
         <div class="userInput">
-            Full Name
-            <input type="text">
-
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname">
         </div>
-
         <div class="userInput">
-            NetID
-            <input type="text">
-
+            <label for="netid">NetID</label>
+            <input type="text" id="netid">
         </div>
-
         <div class="userInput">
-            Phone Number
-            <input type="text">
-
+            <label for="phonenumber">Phone Number</label>
+            <input type="text" id="phonenumber">
         </div>
-
         <div class="userInput">
-            Departure Location
-            <input type="text">
-
+            <label for="departurelocation">Departure Location</label>
+            <input type="text" id="departurelocation">
         </div>
-
         <div class="userInput">
-            Date
-            <input type="text">
-
+            <label for="date">Date</label>
+            <input type="text" id="date">
         </div>
-
         <div class="userInput">
-            Car Description
-            <input type="text">
-
+            <label for="cardescription">Car Description</label>
+            <input type="text" id="cardescription">
         </div>
     </section>
 
