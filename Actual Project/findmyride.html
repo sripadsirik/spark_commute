@@ -21,6 +21,10 @@
             color: white;
             /* Set font color to white */
         }
+
+        .userData.hidden {
+            display: none;
+        }
     </style>
 </head>
 
@@ -29,7 +33,7 @@
     <header>
         <h1 class="hr-lines">SPACERIDE</h1>
         <div class="searchbar">
-            <input type="text" placeholder="Search Location">
+            <input type="text" id="searchInput" placeholder="Search Arrival Location">
         </div>
         <div class="menu">
             <button onclick="goDash()">
@@ -37,36 +41,37 @@
             </button>
             <button onclick="goFind()">
                 <h2>FIND MY RIDE</h2>
+            </button>
         </div>
     </header>
 
-    <form class="signup">
+    <form class="signup" id="carpoolForm">
         <div class="signupTitle">
             <h3>Post Your CarPool Listings Below</h3>
         </div>
         <div class="userInput">
-            <label for="fullname">Full Name</label>
-            <input type="text" id="fullname" name="fullname">
+            <label for="fullname" required>Full Name</label>
+            <input type="text" id="fullname" name="fullname" required>
         </div>
         <div class="userInput">
-            <label for="netid">NetID</label>
-            <input type="text" id="netid" name="netid">
+            <label for="netid" required>NetID</label>
+            <input type="text" id="netid" name="netid" required>
         </div>
         <div class="userInput">
-            <label for="phonenumber">Phone Number</label>
-            <input type="text" id="phonenumber" name="phonenumber">
+            <label for="phonenumber" required>Phone Number</label>
+            <input type="text" id="phonenumber" name="phonenumber" required>
         </div>
         <div class="userInput">
-            <label for="departurelocation">Departure Location</label>
-            <input type="text" id="departurelocation" name="departurelocation">
+            <label for="departurelocation" required>Departure Location</label>
+            <input type="text" id="departurelocation" name="departurelocation" required>
         </div>
         <div class="userInput">
-            <label for="date">Date</label>
-            <input type="text" id="date" name="date">
+            <label for="date" required>Date</label>
+            <input type="text" id="date" name="date" required>
         </div>
         <div class="userInput">
-            <label for="cardescription">Car Description</label>
-            <input type="text" id="cardescription" name="cardescription">
+            <label for="arrivallocation" required>Arrival Location</label>
+            <input type="text" id="arrivallocation" name="arrivallocation" required>
         </div>
         <!-- Other input fields for the form -->
         <button type="button" onclick="submitForm()" class="submit">Submit</button>
@@ -76,37 +81,41 @@
 
     <script>
         function submitForm() {
-            const data = {
-                fullname: document.getElementById('fullname').value,
-                netid: document.getElementById('netid').value,
-                phonenumber: document.getElementById('phonenumber').value,
-                departurelocation: document.getElementById('departurelocation').value,
-                date: document.getElementById('date').value,
-                cardescription: document.getElementById('cardescription').value,
-                submissionTime: new Date().toLocaleString()  // Capture submission time
-            };
+            // Get form elements
+            const fullname = document.getElementById('fullname').value;
+            const netid = document.getElementById('netid').value;
+            const phonenumber = document.getElementById('phonenumber').value;
+            const departurelocation = document.getElementById('departurelocation').value;
+            const date = document.getElementById('date').value;
+            const arrivallocation = document.getElementById('arrivallocation').value;
+
+            // Check if any required field is empty
+            if (fullname === '' || netid === '' || phonenumber === '' || departurelocation === '' || date === '' || arrivallocation === '') {
+                alert('Please fill out all required fields.');
+                return; // Prevent form submission
+            }
 
             // Create a div element to contain the user data
             const userDataDiv = document.createElement('div');
             userDataDiv.classList.add('userData');
 
-        // Construct HTML to display user data
-        userDataDiv.innerHTML = `
-            <p><strong>Full Name:</strong> ${data.fullname}</p>
-            <p><strong>NetID:</strong> ${data.netid}</p>
-            <p><strong>Phone Number:</strong> ${data.phonenumber}</p>
-            <p><strong>Departure Location:</strong> ${data.departurelocation}</p>
-            <p><strong>Date:</strong> ${data.date}</p>
-            <p><strong>Car Description:</strong> ${data.cardescription}</p>
-            <p><strong>Date and Time:</strong> ${data.submissionTime}</p>
+            // Construct HTML to display user data
+            userDataDiv.innerHTML = `
+            <p class="fullname"><strong>Full Name:</strong> ${fullname}</p>
+            <p class="netid"><strong>NetID:</strong> ${netid}</p>
+            <p class="phonenumber"><strong>Phone Number:</strong> ${phonenumber}</p>
+            <p class="departure-location"><strong>Departure Location:</strong> ${departurelocation}</p>
+            <p class="date"><strong>Date:</strong> ${date}</p>
+            <p class="arrival-location"><strong>Arrival Location:</strong> ${arrivallocation}</p>
+            <p class="submission-time"><strong>Date and Time:</strong> ${new Date().toLocaleString()}</p>
             <button class="requestCarpool">Request Carpool</button>
         `;
 
-        // Add event listener to the Request Carpool button
-        const requestCarpoolButton = userDataDiv.querySelector('.requestCarpool');
-        requestCarpoolButton.addEventListener('click', function() {
-            // Deep clone the userDataDiv
-            const clonedUserDataDiv = userDataDiv.cloneNode(true);
+            // Add event listener to the Request Carpool button
+            const requestCarpoolButton = userDataDiv.querySelector('.requestCarpool');
+            requestCarpoolButton.addEventListener('click', function () {
+                // Deep clone the userDataDiv
+                const clonedUserDataDiv = userDataDiv.cloneNode(true);
 
                 // Remove the userDataDiv from the current page
                 userDataDiv.remove();
@@ -129,9 +138,8 @@
             document.getElementById('phonenumber').value = '';
             document.getElementById('departurelocation').value = '';
             document.getElementById('date').value = '';
-            document.getElementById('cardescription').value = '';
+            document.getElementById('arrivallocation').value = '';
         }
-
 
         function goDash() {
             window.location.href = 'dashboard.html';
@@ -144,6 +152,24 @@
         function goTrip() {
             window.location.href = 'myTrips.html';
         };
+
+        // Add an event listener to the search input field
+        document.getElementById('searchInput').addEventListener('input', function () {
+            const searchTerm = this.value.toLowerCase(); // Get the search term and convert it to lowercase for case-insensitive matching
+
+            // Loop through each trip and check if it matches the search term
+            const userDataItems = document.querySelectorAll('.userData');
+            userDataItems.forEach(function (userDataItem) {
+                const arrivalLocation = userDataItem.querySelector('.arrival-location').textContent.toLowerCase();
+                if (arrivalLocation.includes(searchTerm)) {
+                    // If the arrival location matches the search term, show the trip
+                    userDataItem.classList.remove('hidden');
+                } else {
+                    // If the arrival location does not match the search term, hide the trip
+                    userDataItem.classList.add('hidden');
+                }
+            });
+        });
     </script>
 
     <!-- <footer>
