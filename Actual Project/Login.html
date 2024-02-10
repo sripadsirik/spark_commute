@@ -30,14 +30,13 @@
                         <input type="password" id="password" placeholder="Password" required>
 						
 						<div id="button_containerr">
-                            <button onclick="login()">Login</button>
+                            <button onclick="goDash()">Login</button>
 		
                             
                         </div>
 
                         <div id="button_container">
 							<button onclick="register()">Don't have an account? Register</button>
-                            <a href="../Registration/Signup.html">Register here</a>
                             
                         </div>
 						</div>
@@ -53,3 +52,14 @@
     </body>
 
 </html>
+
+<script>
+    function goDash(){
+        window.location.href='dashboard.html';
+    };
+
+    function register(){
+        window.location.href='Signup.html';
+    };
+
+</script>
