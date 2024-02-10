@@ -107,6 +107,30 @@ header button:hover {
 }
 
 .menu {
-    padding: 50px;
+    padding: 20px;
     color: #121212;
+    margin-right: 20px;
 }
+
+.searchbar {
+    margin-top: 30px;
+    text-align: center; /* Center the search bar */
+    padding-bottom: 10px;
+}
+
+.searchbar input[type="text"] {
+    width: 70%; /* Set the width of the search bar */
+    height: 50px; /* Increase the height of the search bar */
+    padding: 12px; /* Adjust padding for better visual appearance */
+    border-radius: 25px; /* Add border-radius for rounded corners */
+    border: 1px solid #ccc; /* Add border for better visibility */
+    font-size: 16px; /* Adjust font size */
+    box-sizing: border-box; /* Include padding and border in the width */
+    transition: all 0.3s ease; /* Add transition for smooth animation */
+}
+
+.searchbar input[type="text"]:focus {
+    border-color: #f44336; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
