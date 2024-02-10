@@ -38,7 +38,11 @@
 	</section>
 	<div class="text-box">
 		<h1>SpaceRIDE</h1>
-		<p>Help reduce car emissions</p>
+		<div class="message-container">
+			<p class="message">Help reduce carbon emissions</p>
+			<p class="message">Connect with your classmates</p>
+			<p class="message">Easy and efficient transportation</p>
+		</div>
 		<p><a href="./findmyride.html" class="hero-btn">Find a ride</a></p>
 	</div>
 
@@ -57,6 +61,23 @@
 			navLinks.style.right = "-200px";
 		}
 
+	</script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			const messages = document.querySelectorAll('.message');
+			let currentIndex = 0;
+
+			function showNextMessage() {
+				messages.forEach(message => message.style.display = 'none');
+				messages[currentIndex].style.display = 'block';
+				currentIndex = (currentIndex + 1) % messages.length;
+			}
+
+			showNextMessage(); // Show the first message initially
+
+			setInterval(showNextMessage, 3000); // Change message every 5 seconds
+		});
 	</script>
 
 	<script>
