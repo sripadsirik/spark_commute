@@ -46,8 +46,8 @@
         </div>
     </header>
 
-
-    <div id="userDataContainer"></div>
+    <!-- Ensure you have this element in your HTML -->
+    <div id="myTripsUserDataContainer"></div>
 
     <script>
 
@@ -56,12 +56,55 @@
         };
 
         function goFind() {
-            window.location.href = 'findmyride.html';
+            // Open findmyride.html in a new window
+            const findMyRideWindow = window.open('findmyride.html', '_blank');
+            // Pass the ID of myTripsUserDataContainer to the new window
+            findMyRideWindow.myTripsUserDataContainerId = 'myTripsUserDataContainer';
         };
 
         function goTrip() {
             window.location.href = 'myTrips.html';
         };
+
+        function displaySavedUserData() {
+            const userData = localStorage.getItem('userTrips');
+            if (userData) {
+                const trips = JSON.parse(userData);
+                trips.forEach(trip => {
+                    const userDataDiv = createUserDiv(trip);
+                    document.getElementById('myTripsUserDataContainer').appendChild(userDataDiv);
+                });
+            } else {
+                // Handle case when no user data is found in localStorage
+            }
+        }
+
+        function createUserDiv(data) {
+            const userDataDiv = document.createElement('div');
+            userDataDiv.classList.add('userData');
+            userDataDiv.innerHTML = `
+                <p><strong>Full Name:</strong> ${data.fullname}</p>
+                <p><strong>NetID:</strong> ${data.netid}</p>
+                <p><strong>Phone Number:</strong> ${data.phonenumber}</p>
+                <p><strong>Departure Location:</strong> ${data.departurelocation}</p>
+                <p><strong>Date:</strong> ${data.date}</p>
+                <p><strong>Arrival Location:</strong> ${data.arrivallocation}</p>
+                <button onclick="deleteTrip(this)" class="deleteButton">Delete</button>
+            `;
+            return userDataDiv;
+        }
+
+        function deleteTrip(button) {
+            const userDataDiv = button.parentNode;
+            userDataDiv.remove();
+            // Remove the corresponding data from localStorage
+            const trips = JSON.parse(localStorage.getItem('userTrips'));
+            const updatedTrips = trips.filter(trip => {
+                // Assuming full name is the unique identifier
+                return trip.fullname !== userDataDiv.querySelector('p:nth-child(1)').innerText.split(':')[1].trim();
+            });
+            localStorage.setItem('userTrips', JSON.stringify(updatedTrips));
+        }
     </script>
 
     <!-- <footer>

@@ -13,7 +13,8 @@ html, body {
     width: 100%;
     height: 100%;
     background: -webkit-linear-gradient(25deg, #88E0EF, #5384B1, #3A5E8C, #213B62, #261A40, #52336D, #7C4293, #CA7AEB);
-
+    background-position: center;
+	background-image: url("Backgroundcss.jpeg");
     display: flex;
     justify-content: center;
     align-items: center;
