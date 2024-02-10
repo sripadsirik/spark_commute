@@ -31,14 +31,34 @@
     </header>
 
 
-    <section id="section1">
+    <form class="userInput">
+        Full Name
+        <input name="Full Name" type="text">
 
-        <div class="userInput">
-            Full Name
-            <input type="text">
+        <button type="submit"> Submit </button>
 
-        </div>
-    </section>
+    </form>
+
+
+    <script>
+        const inputData = document.querySelector('.userInput');
+
+        inputData.addEventListener('submit', event => {
+            event.preventDefault();
+
+            const formData = new FormData(inputData);
+            const data = Object.fromEntries(formData);
+
+            fetch('https://reques.in/api/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            }).then(res => res.json()).then(data => console.log(data)).catch(error => console.log(error));
+
+        });
+    </script>
 
     <section id="section2">
         <h2>Section 2</h2>
@@ -51,7 +71,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 My Basic HTML Page</p>
+        <p>&copy; 2024 Spaceride </p>
     </footer>
 
 </body>
