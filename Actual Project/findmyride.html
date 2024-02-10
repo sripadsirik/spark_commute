@@ -8,15 +8,18 @@
     <link rel="stylesheet" href="find.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
     <style>
         /* Add your CSS styles here */
         .userData {
             border: 1px solid #ccc;
             padding: 10px;
             margin-bottom: 10px;
-            color: white; /* Set font color to white */
+            color: white;
+            /* Set font color to white */
         }
     </style>
 </head>
@@ -34,16 +37,12 @@
             </button>
             <button onclick="goFind()">
                 <h2>FIND MY RIDE</h2>
-            </button>
-            <button onclick="goTrip()">
-                <h2>MY TRIPS</h2>
-            </button>
         </div>
     </header>
 
     <form class="signup">
         <div class="signupTitle">
-            <h3>Post your carloop listings below</h3>
+            <h3>Post Your CarPool Listings Below</h3>
         </div>
         <div class="userInput">
             <label for="fullname">Full Name</label>
@@ -91,23 +90,23 @@
             const userDataDiv = document.createElement('div');
             userDataDiv.classList.add('userData');
 
-            // Construct HTML to display user data
-            userDataDiv.innerHTML = `
-                <p><strong>Full Name:</strong> ${data.fullname}</p>
-                <p><strong>NetID:</strong> ${data.netid}</p>
-                <p><strong>Phone Number:</strong> ${data.phonenumber}</p>
-                <p><strong>Departure Location:</strong> ${data.departurelocation}</p>
-                <p><strong>Date:</strong> ${data.date}</p>
-                <p><strong>Car Description:</strong> ${data.cardescription}</p>
-                <p><strong>Date and Time:</strong> ${data.submissionTime}</p>
-                <button class="requestCarpool">Request Carpool</button>
-            `;
+        // Construct HTML to display user data
+        userDataDiv.innerHTML = `
+            <p><strong>Full Name:</strong> ${data.fullname}</p>
+            <p><strong>NetID:</strong> ${data.netid}</p>
+            <p><strong>Phone Number:</strong> ${data.phonenumber}</p>
+            <p><strong>Departure Location:</strong> ${data.departurelocation}</p>
+            <p><strong>Date:</strong> ${data.date}</p>
+            <p><strong>Car Description:</strong> ${data.cardescription}</p>
+            <p><strong>Date and Time:</strong> ${data.submissionTime}</p>
+            <button class="requestCarpool">Request Carpool</button>
+        `;
 
-            // Add event listener to the Request Carpool button
-            const requestCarpoolButton = userDataDiv.querySelector('.requestCarpool');
-            requestCarpoolButton.addEventListener('click', function() {
-                // Deep clone the userDataDiv
-                const clonedUserDataDiv = userDataDiv.cloneNode(true);
+        // Add event listener to the Request Carpool button
+        const requestCarpoolButton = userDataDiv.querySelector('.requestCarpool');
+        requestCarpoolButton.addEventListener('click', function() {
+            // Deep clone the userDataDiv
+            const clonedUserDataDiv = userDataDiv.cloneNode(true);
 
                 // Remove the userDataDiv from the current page
                 userDataDiv.remove();
