@@ -10,46 +10,69 @@
 <body>
 
     <header>
-        <h1>SPACERIDE</h1>
-
+        <h1 class="hr-lines">SPACERIDE</h1>
         <div class="searchbar">
             <input type="text" placeholder="Search Location">
-            <button onclick="location.href='login.html'">Log In</button>
-            <button onclick="location.href='signup.html'">Sign Up</button>
         </div>
-        <button onclick>
-            <h2>DASHBOARD</h2>
-        </button>
-        <button onclick>
-            <h2>FIND MY RIDE</h2>
-        </button>
-        <button>
-            <h2>MY TRIPS</h2>
-        </button>
-
-
+        <div class="menu">
+            <button onclick>
+                <h2>DASHBOARD</h2>
+            </button>
+            <button onclick>
+                <h2>FIND MY RIDE</h2>
+            </button>
+            <button>
+                <h2>MY TRIPS</h2>
+            </button>
+        </div>
     </header>
 
-
-    <form class="userInput">
-        Full Name
-        <input name="Full Name" type="text">
-
-        <button type="submit"> Submit </button>
-
+    <form class="signup">
+        <div class="signupTitle">
+            <h3>Post your carloop listings below</h3>
+        </div>
+        <div class="userInput">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname">
+        </div>
+        <div class="userInput">
+            <label for="netid">NetID</label>
+            <input type="text" id="netid">
+        </div>
+        <div class="userInput">
+            <label for="phonenumber">Phone Number</label>
+            <input type="text" id="phonenumber">
+        </div>
+        <div class="userInput">
+            <label for="departurelocation">Departure Location</label>
+            <input type="text" id="departurelocation">
+        </div>
+        <div class="userInput">
+            <label for="date">Date</label>
+            <input type="text" id="date">
+        </div>
+        <div class="userInput">
+            <label for="cardescription">Car Description</label>
+            <input type="text" id="cardescription">
+        </div>
+        <!-- Other input fields for the form -->
+        <button type="submit" class="submit">Submit</button>
     </form>
 
 
     <script>
-        const inputData = document.querySelector('.userInput');
+        const inputData = document.querySelector('.signup');
+
 
         inputData.addEventListener('submit', event => {
             event.preventDefault();
 
+
             const formData = new FormData(inputData);
             const data = Object.fromEntries(formData);
 
-            fetch('https://reques.in/api/users', {
+
+            fetch('https://reqres.in/api/users', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -57,10 +80,12 @@
                 body: JSON.stringify(data)
             }).then(res => res.json()).then(data => console.log(data)).catch(error => console.log(error));
 
+
         });
     </script>
 
-    <section id="section2">
+
+    <!-- <section id="section2">
         <h2>Section 2</h2>
         <p>This is the content of Section 2.</p>
     </section>
@@ -68,10 +93,10 @@
     <section id="section3">
         <h2>Section 3</h2>
         <p>This is the content of Section 3.</p>
-    </section>
+    </section> -->
 
     <footer>
-        <p>&copy; 2024 Spaceride </p>
+        <p>&copy; 2024 SparkHacks </p>
     </footer>
 
 </body>
