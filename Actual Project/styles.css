@@ -26,46 +26,35 @@ header button {
     margin: 0 10px;
 }
 
-#menu button {
-    padding: 10px;
-    background: #51515e;
-    text-align: center;
-    margin-left: 50px;
-    margin-right: 50px;
-    padding-right: 100px;
-    padding-left: 100px;
-    color: #333;
+/* Updated CSS for the signup section */
+#signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 50%; /* Limiting to half of the page */
+    margin: 100px auto; /* Centering the form with some top margin */
+    overflow-y: auto; /* Enable vertical scrolling if the content exceeds viewport height */
+    height: calc(100vh - 200px); /* Make the form container take up the full viewport height minus header and footer heights */
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    background: -webkit-linear-gradient(25deg, #88E0EF, #5384B1, #3A5E8C, #213B62, #261A40, #52336D, #7C4293, #CA7AEB);
-    margin: 0;
-    overflow: hidden;
-}
-
-nav ul li {
-    float: left;
-}
-
-#menu {
-    padding: 35px;
-    background: -webkit-linear-gradient(25deg, #88E0EF, #5384B1, #3A5E8C, #213B62, #261A40, #52336D, #7C4293, #CA7AEB);
+.userInput {
+    display: flex;
+    flex-direction: column;
+    width: 80%; /* Adjust as needed */
     margin-bottom: 20px;
-    color: #333;
 }
 
-nav ul li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+.userInput label {
+    margin-bottom: 5px;
 }
 
-nav ul li a:hover {
-    background: -webkit-linear-gradient(25deg, #88E0EF, #5384B1, #3A5E8C, #213B62, #261A40, #52336D, #7C4293, #CA7AEB);
+.userInput input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 
