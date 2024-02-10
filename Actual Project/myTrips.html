@@ -73,7 +73,7 @@
             const userData = localStorage.getItem('userData');
             if (userData) {
                 const data = JSON.parse(userData);
-                const userDataDiv = createUserDiv(data);
+                const userDataDiv = createUserData(data);
                 document.getElementById('myTripsUserDataContainer').appendChild(userDataDiv);
             } else {
                 const noDataMessage = document.createElement('p');
@@ -82,7 +82,7 @@
             }
         };
 
-        function createUserDiv(data) {
+        function createUserData(data) {
             const userDataDiv = document.createElement('div');
             userDataDiv.classList.add('userData');
             userDataDiv.innerHTML = `
@@ -165,7 +165,7 @@
         <p>&copy; 2024 My Basic HTML Page</p>
     </footer>
 
-    <!-- Ensure you have this element in your HTML 
+     Ensure you have this element in your HTML 
     <div id="myTripsUserDataContainer"></div>
 
     <script>
