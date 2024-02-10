@@ -47,7 +47,9 @@
             event.preventDefault();
 
             const formData = new FormData(inputData);
-            console.log(formData.get('Full Name'));
+            const data = Object.fromEntries(formData);
+
+            console.log(data);
 
         });
     </script>
