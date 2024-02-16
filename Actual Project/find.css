@@ -5,9 +5,9 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
 
 * {
-	margin: 0;
-	padding: 0;
-	font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -86,7 +86,7 @@ header button:hover {
     padding: 20px;
     margin-top: 50px;
     background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 50%;
     max-width: 500px;
@@ -114,22 +114,33 @@ header button:hover {
 
 .searchbar {
     margin-top: 30px;
-    text-align: center; /* Center the search bar */
+    text-align: center;
+    /* Center the search bar */
     padding-bottom: 10px;
 }
 
 .searchbar input[type="text"] {
-    width: 70%; /* Set the width of the search bar */
-    height: 50px; /* Increase the height of the search bar */
-    padding: 12px; /* Adjust padding for better visual appearance */
-    border-radius: 25px; /* Add border-radius for rounded corners */
-    border: 1px solid #ccc; /* Add border for better visibility */
-    font-size: 16px; /* Adjust font size */
-    box-sizing: border-box; /* Include padding and border in the width */
-    transition: all 0.3s ease; /* Add transition for smooth animation */
+    width: 70%;
+    /* Set the width of the search bar */
+    height: 50px;
+    /* Increase the height of the search bar */
+    padding: 12px;
+    /* Adjust padding for better visual appearance */
+    border-radius: 25px;
+    /* Add border-radius for rounded corners */
+    border: 1px solid #ccc;
+    /* Add border for better visibility */
+    font-size: 16px;
+    /* Adjust font size */
+    box-sizing: border-box;
+    /* Include padding and border in the width */
+    transition: all 0.3s ease;
+    /* Add transition for smooth animation */
 }
 
 .searchbar input[type="text"]:focus {
-    border-color: #f44336; /* Change border color on focus */
-    outline: none; /* Remove default outline */
+    border-color: #f44336;
+    /* Change border color on focus */
+    outline: none;
+    /* Remove default outline */
 }
