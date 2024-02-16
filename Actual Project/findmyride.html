@@ -190,7 +190,6 @@
 
 </html> -->
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -225,9 +224,14 @@
 
     <header>
         <h1 class="hr-lines">SpaceRIDE</h1>
-        <div class="searchbar">
-            <input type="text" id="searchInput" placeholder="Search Arrival Location">
+        <div class="text-box">
+            <div class="message-container">
+                <h2 class="message">Help reduce carbon emissions</h2>
+                <h2 class="message">Connect with your classmates</h2>
+                <h2 class="message">Easy and efficient transportation</h2>
+            </div>
         </div>
+
         <div class="menu">
             <button onclick="goDash()">
                 <h2>DASHBOARD</h2>
@@ -241,8 +245,16 @@
             </button>
         </div>
     </header>
+    <div class="searchbar">
+        <input type="text" id="searchInput" placeholder="Search Arrival Location">
+    </div>
+    <div class = map>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.973515734775!2d-87.65052302397677!3d41.87191626580142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2ce8bf0127db%3A0x40f8d1416f07f0de!2sUIC%20Student%20Center%20East!5e0!3m2!1sen!2sus!4v1708121237141!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
 
     <form class="signup" id="carpoolForm">
+
+ 
         <div class="signupTitle">
             <h3>Post Your CarPool Listings Below</h3>
         </div>
@@ -379,6 +391,22 @@
 
         });
     </script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			const messages = document.querySelectorAll('.message');
+			let currentIndex = 0;
+
+			function showNextMessage() {
+				messages.forEach(message => message.style.display = 'none');
+				messages[currentIndex].style.display = 'block';
+				currentIndex = (currentIndex + 1) % messages.length;
+			}
+
+			showNextMessage(); // Show the first message initially
+
+			setInterval(showNextMessage, 3000); // Change message every 5 seconds
+		});
+	</script>    
 
 </body>
 
