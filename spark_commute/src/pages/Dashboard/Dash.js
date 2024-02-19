@@ -3,7 +3,7 @@ import React from 'react';
 const Dash = () => {
     return (
         <div>
-            <h1>howle</h1>
+            <h1>gunda</h1>
         </div>
     );
 };
